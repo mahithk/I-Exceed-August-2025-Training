@@ -1,0 +1,17 @@
+let today = new Date()
+let hours = today.getHours()
+let minutes = today.getMinutes()
+let seconds = today.getSeconds()
+let fullDate = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear()
+console.log("Time is:", hours + ":" + minutes + ":" + seconds)
+console.log("Date is:", fullDate)
+console.log("Year is:", today.getFullYear())
+
+let now = new Date()
+let time = now.toLocaleTimeString()
+let date = now.toLocaleDateString()
+let year = now.getFullYear()
+console.log("Current Time:", time)
+console.log("Current Date:", date)
+console.log("Current Year:", year)
+
