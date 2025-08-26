@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Zone Converter</title>
+</head>
+<body>
+  <h2>World Time Zone Converter</h2>
+  <label for="timezone">Choose a Time Zone:</label>
+  <select id="timezone">
+    <option value="Asia/Kolkata">India (IST)</option>
+    <option value="America/New_York">New York (EST)</option>
+    <option value="Europe/London">London (GMT)</option>
+    <option value="Asia/Tokyo">Tokyo (JST)</option>
+    <option value="Australia/Sydney">Sydney (AEDT)</option>
+  </select>
+  <button onclick="showTime()">Show Time</button>
+  <p id="result"></p>
+
+  <script>
+    function showTime() {
+      let zone = document.getElementById("timezone").value
+      let now = new Date()
+      let options = { timeZone: zone, hour: '2-digit', minute: '2-digit', second: '2-digit' }
+      let formatted = new Intl.DateTimeFormat([], options).format(now)
+      document.getElementById("result").innerText = "Current time in " + zone + ": " + formatted
+    }
+    setInterval(showTime, 1000)
+  </script>
+</body>
+</html>
+    
