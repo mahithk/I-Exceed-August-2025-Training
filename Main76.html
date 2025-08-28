@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+</head>
+<body>
+  <h2>Unit Converter</h2>
+  <label for="value">Enter Value:</label>
+  <input type="number" id="value" placeholder="Enter number">
+  <select id="unit">
+    <option value="kmToMiles">Kilometers to Miles</option>
+    <option value="milesToKm">Miles to Kilometers</option>
+    <option value="kgToPounds">Kilograms to Pounds</option>
+    <option value="poundsToKg">Pounds to Kilograms</option>
+    <option value="cmToInch">Centimeters to Inches</option>
+    <option value="inchToCm">Inches to Centimeters</option>
+  </select>
+  <button onclick="convert()">Convert</button>
+  <p id="result"></p>
+
+  <script>
+    function convert() {
+      let value = parseFloat(document.getElementById("value").value)
+      let unit = document.getElementById("unit").value
+      let result
+      if (unit === "kmToMiles") result = value * 0.621371 + " Miles"
+      else if (unit === "milesToKm") result = value * 1.60934 + " Kilometers"
+      else if (unit === "kgToPounds") result = value * 2.20462 + " Pounds"
+      else if (unit === "poundsToKg") result = value * 0.453592 + " Kilograms"
+      else if (unit === "cmToInch") result = value * 0.393701 + " Inches"
+      else if (unit === "inchToCm") result = value * 2.54 + " Centimeters"
+      document.getElementById("result").innerText = "Converted Value: " + result
+    }
+  </script>
+</body>
+</html>
