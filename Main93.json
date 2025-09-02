@@ -1,0 +1,23 @@
+let student = {
+    name: "Mahith",
+    age: 21,
+    course: "Computer Science",
+    marks: { math: 90, science: 85, english: 88 },
+    getAverage: function () {
+        let values = Object.values(this.marks)
+        let total = values.reduce((a, b) => a + b, 0)
+        return total / values.length
+    }
+}
+
+let jsonString = JSON.stringify(student)
+console.log("JSON String:", jsonString)
+
+let parsedData = JSON.parse(jsonString)
+console.log("Parsed Object:", parsedData)
+
+console.log("Keys:", Object.keys(parsedData))
+console.log("Values:", Object.values(parsedData))
+console.log("Entries:", Object.entries(parsedData))
+
+console.log("Average Marks:", student.getAverage())
