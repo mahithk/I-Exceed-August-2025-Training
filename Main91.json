@@ -1,0 +1,36 @@
+let student = {
+    name: "Arjun",
+    age: 21,
+    course: "Computer Science",
+    subjects: ["Math", "Physics", "Programming"],
+    address: {
+        city: "Bangalore",
+        state: "Karnataka"
+    }
+}
+
+let jsonString = JSON.stringify(student)
+console.log("JSON String:", jsonString)
+
+let jsonObject = JSON.parse(jsonString)
+console.log("Student Name:", jsonObject.name)
+console.log("Student City:", jsonObject.address.city)
+
+jsonObject.grade = "A"
+console.log("Updated Student Object:", jsonObject)
+
+let keys = Object.keys(jsonObject)
+console.log("Object Keys:", keys)
+
+let values = Object.values(jsonObject)
+console.log("Object Values:", values)
+
+let entries = Object.entries(jsonObject)
+console.log("Object Entries:", entries)
+
+let clonedStudent = Object.assign({}, jsonObject)
+console.log("Cloned Student:", clonedStudent)
+
+clonedStudent.name = "Rahul"
+console.log("Modified Clone Name:", clonedStudent.name)
+console.log("Original Student Name:", jsonObject.name)
