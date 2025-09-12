@@ -1,0 +1,74 @@
+1. S — Single Responsibility Principle (SRP)
+A class should have one and only one reason to change.
+
+In your code:
+
+FileEncryptor → only handles encryption logic.
+
+FileDecryptor → only handles decryption logic.
+
+CryptoManager → only handles file existence check and delegates the crypto work.
+
+CryptoOperation → base abstraction for encryption/decryption.
+
+✅ This is good — each class has a clearly defined responsibility.
+
+
+
+2. O — Open/Closed Principle (OCP)
+Software entities should be open for extension but closed for modification.
+
+In your code:
+
+If you wanted to add new encryption algorithms (e.g., RSA, Blowfish), you can just extend CryptoOperation without touching existing classes.
+
+The rest of the system (CryptoManager) would work without changes.
+
+✅ This follows OCP well.
+
+
+
+3. L — Liskov Substitution Principle (LSP)
+Subtypes must be substitutable for their base types.
+
+In your code:
+
+FileEncryptor and FileDecryptor both inherit from CryptoOperation.
+
+Anywhere a CryptoOperation is expected, you can pass either without breaking functionality.
+
+✅ This principle is respected.
+
+
+
+4. I — Interface Segregation Principle (ISP)
+Clients should not be forced to depend on methods they do not use.
+
+In your code:
+
+You don't have "fat" interfaces — instead, you use an abstract class (CryptoOperation) with only the required processFile method.
+
+Any subclass only needs to implement what is essential.
+
+✅ No unnecessary methods are forced upon subclasses.
+
+
+
+5. D — Dependency Inversion Principle (DIP)
+High-level modules should not depend on low-level modules; both should depend on abstractions.
+
+In your code:
+
+CryptoManager depends on CryptoOperation (abstraction), not a specific FileEncryptor or FileDecryptor.
+
+This means you can swap in any implementation without modifying CryptoManager.
+
+✅ This principle is implemented correctly.
+
+Summary Table for Your Code
+SOLID Principle	Status	Why?
+SRP	✅	Each class has one job
+OCP	✅	New algorithms can be added without changing existing code
+LSP	✅	Subclasses can replace parent class without issues
+ISP	✅	No unnecessary methods are imposed
+DIP	✅	High-level depends on abstraction, not concrete classes

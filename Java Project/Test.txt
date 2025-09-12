@@ -1,0 +1,33 @@
+Name: Noojarla Mahith Kumar
+
+Graduated In New Horizon College of Engineering in the Month_year of May_2025
+
+I am from Andhra Pradesh
+
+Gender: Male
+
+On 1st August I Have joined the I-exceed Company
+
+It's a Product-Based Company
+
+I am working in this company as a Software Developer Trainee...
+
+My First Assessment was on java project!!!
+
+I have Chosen a Project on Cryptographic Principles...
+
+My Project name : Quantum Shield Vault   //"Quantum" meant for cutting edge technologies making the data encryption standard algorithm like AES or DES...                              
+                                           "Shield" meant the security standards for data Encryption methods... and "vault" is about the storage of file                                                             
+                                            are existing for the Encryption purpose...
+
+It's completely based on the cryptography
+
+Using OOPS concepts: Abstraction - Taking the Abstract class as crypto Operation
+                     Inheritance - Taking an File Encryptor and File Decryptor extends from crypto Operation
+                     Polymorphism - Taking Crypto Manager will works with any cryptoOperation as subclass at runtime
+                     Encapsulation - Data and Key are kept in a private and protected access modifier inside the class
+
+
+                     
+
+ 
